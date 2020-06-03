@@ -16,7 +16,7 @@ if (isset($_POST['login_form'])) {
     $user = new User($login, $password);
     $userDAO = new UserDAO();
     if ($userDAO->findByLoginAndPassword($user)) {
-        $_SESSION['inputLogin'] = $login;
+        $_SESSION['user'] = serialize($user);
         header('Location: todos.php');
         exit;
     } else {

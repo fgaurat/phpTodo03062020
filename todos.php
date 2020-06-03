@@ -14,6 +14,11 @@
 <body>
     <div class="container">
         <h1>Todos</h1>
+        
+        <?php if( isset($user)):?>
+            Bonjour <?= $user->login ?>
+        <?php endif;?>
+
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Add todo

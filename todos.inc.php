@@ -4,7 +4,17 @@ include('./vendor/autoload.php');
 use App\Data\Todo;
 use App\Data\TodoDAO;
 
+session_start();
+
 $dao = new TodoDAO();
+if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
+    var_dump($_SESSION['user']);
+    $user = unserialize($_SESSION['user']);
+}
+else{
+    header('Location: index.php');
+}
+
 
 if( isset($_GET['id_delete']) && !empty($_GET['id_delete'])){
     $id = $_GET['id_delete'];
