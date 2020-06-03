@@ -8,4 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Data\\Todo' => $baseDir . '/app/Todo.php',
     'App\\Data\\TodoDAO' => $baseDir . '/app/TodoDAO.php',
+    'App\\Data\\User' => $baseDir . '/app/User.php',
+    'App\\Data\\UserDAO' => $baseDir . '/app/UserDAO.php',
 );

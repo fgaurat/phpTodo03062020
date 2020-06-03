@@ -23,6 +23,8 @@ class ComposerStaticInit32f7d1281e6f90c6ebd2c0ee026f841f
     public static $classMap = array (
         'App\\Data\\Todo' => __DIR__ . '/../..' . '/app/Todo.php',
         'App\\Data\\TodoDAO' => __DIR__ . '/../..' . '/app/TodoDAO.php',
+        'App\\Data\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\Data\\UserDAO' => __DIR__ . '/../..' . '/app/UserDAO.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

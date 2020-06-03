@@ -37,7 +37,8 @@ class TodoDAO{
         
         $title = $todo->title;
         $ts = $todo->dueDate;
-        $sql = "INSERT INTO todos (title,done,due_date) VALUES('$title',1,$ts)";
+        $done = $todo->done;
+        $sql = "INSERT INTO todos (title,done,due_date) VALUES('$title',$done,$ts)";
         $this->dbh->exec($sql);
 
     }

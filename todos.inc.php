@@ -14,14 +14,14 @@ if( isset($_GET['id_delete']) && !empty($_GET['id_delete'])){
  //ADD Todo
  if( isset($_POST['todo_form'])){
     $title = $_POST['todo_title'];
-    
     $dueDate = $_POST['todo_dueDate'];
     $dt = DateTime::createFromFormat('Y-m-d',$dueDate);
     $ts = $dt->getTimestamp();
-    
-    $todo = new Todo($title,0,$ts);
-    $dao->save($todo);
 
+    $done = isset($_POST['todo_done']) && !empty($_POST['todo_done'])?1:0;
+
+    $todo = new Todo($title,$done,$ts);
+    $dao->save($todo);
 }
 
 
