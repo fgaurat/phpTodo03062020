@@ -11,7 +11,7 @@ class Todo
     private $dueDate;
 
 
-    public function __construct($id = 0, $title = '', $done = false, $dueDate = 0)
+    public function __construct( $title = '', $done = false, $dueDate = 0,$id = 0)
     {
         $this->id = $id;
         $this->title = $title;

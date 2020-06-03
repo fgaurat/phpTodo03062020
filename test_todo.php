@@ -13,5 +13,7 @@ $dao = new TodoDAO();
 $arr_todos = $dao->findAll();
 print_r($arr_todos[0]);
 echo count($arr_todos);
+
+$dao->save($t);
 ?>
 </pre>

@@ -20,11 +20,25 @@ class TodoDAO{
         
 
         foreach($sth->fetchAll(\PDO::FETCH_ASSOC) as $todo){
-            $t = new Todo($todo['id'],$todo['title'],$todo['done'],$todo['due_date']);
+            $t = new Todo($todo['title'],$todo['done'],$todo['due_date'],$todo['id']);
             $arr_todos[] = $t;
         }
         return $arr_todos;
     
     }
 
+    public function delete($id){
+        $delete_todo = "DELETE FROM todos WHERE id = $id";
+        $this->dbh->exec($delete_todo);
+
+    }
+
+    public function save(Todo $todo){
+        
+        $title = $todo->title;
+        $ts = $todo->dueDate;
+        $sql = "INSERT INTO todos (title,done,due_date) VALUES('$title',1,$ts)";
+        $this->dbh->exec($sql);
+
+    }
 }
